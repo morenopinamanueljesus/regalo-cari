@@ -1,0 +1,818 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap");
+
+:root {
+  font-family: "VT323", monospace;
+  color: #f7f0d0;
+  background: #100f1d;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --bg: #100f1d;
+  --panel: #19182b;
+  --purple: #6b63a6;
+  --purple-light: #aaa5d5;
+  --pink: #ff5577;
+  --yellow: #ffe66d;
+  --green: #7dffb3;
+  --muted: #aaa5c9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  background: var(--bg);
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 50% 0%, #29264d 0%, transparent 50%),
+    #100f1d;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid var(--yellow);
+  outline-offset: 3px;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+.game-shell {
+  width: min(100% - 28px, 820px);
+  margin: 0 auto;
+  padding: 20px 0 28px;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0 18px;
+  border-bottom: 2px solid var(--purple);
+}
+
+.pixel-logo {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border: 3px solid var(--yellow);
+  background: var(--pink);
+  color: white;
+  font-family: "Press Start 2P", monospace;
+  font-size: 13px;
+  box-shadow: 4px 4px 0 #080711;
+}
+
+.topbar-title {
+  margin: 0;
+  color: var(--yellow);
+  font-family: "Press Start 2P", monospace;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.topbar-subtitle {
+  margin: 0;
+  color: var(--muted);
+  font-size: 17px;
+  letter-spacing: 2px;
+}
+
+.topbar-status {
+  margin-left: auto;
+  color: var(--green);
+  font-size: 15px;
+  white-space: nowrap;
+}
+
+.intro {
+  padding-top: 28px;
+}
+
+.eyebrow {
+  color: var(--pink);
+  font-family: "Press Start 2P", monospace;
+  font-size: 10px;
+  line-height: 1.9;
+  letter-spacing: 1px;
+}
+
+h1 {
+  margin: 18px 0;
+  font-family: "Press Start 2P", monospace;
+  font-size: clamp(24px, 6vw, 42px);
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+h1 span {
+  color: var(--yellow);
+  text-shadow: 3px 3px 0 #a42e5a;
+}
+
+.intro-copy,
+.ending-copy {
+  max-width: 620px;
+  color: #d6d0f2;
+  font-size: 24px;
+  line-height: 1.25;
+}
+
+.pixel-panel {
+  margin: 22px 0;
+  padding: clamp(16px, 4vw, 28px);
+  border: 3px solid var(--purple);
+  background: linear-gradient(145deg, #201e3d, #131225);
+  box-shadow: 0 6px 0 #080711;
+}
+
+.panel-label {
+  margin: 0 0 16px;
+  color: var(--yellow);
+  font-family: "Press Start 2P", monospace;
+  font-size: 9px;
+  line-height: 2;
+}
+
+.setup-panel label {
+  display: block;
+  margin: 18px 0 7px;
+  color: var(--muted);
+  font-size: 20px;
+}
+
+.setup-panel input {
+  display: block;
+  width: 100%;
+  min-height: 48px;
+  padding: 10px 12px;
+  border: 2px solid #514b83;
+  border-radius: 0;
+  background: #0c0b18;
+  color: #fff;
+  font-size: 21px;
+}
+
+.setup-panel input::placeholder {
+  color: #77718e;
+}
+
+.small-note {
+  margin: 16px 0 0;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.3;
+}
+
+.pixel-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 52px;
+  margin-top: 20px;
+  padding: 12px 16px;
+  border: 3px solid var(--yellow);
+  border-radius: 0;
+  background: #252343;
+  color: var(--yellow);
+  font-family: "Press Start 2P", monospace;
+  font-size: 10px;
+  line-height: 1.9;
+  text-align: center;
+  box-shadow: 0 5px 0 #080711;
+  transition: transform 120ms ease, filter 120ms ease;
+}
+
+.pixel-button:hover {
+  filter: brightness(1.2);
+  transform: translateY(-2px);
+}
+
+.pixel-button:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #080711;
+}
+
+.primary-button {
+  border-color: #ff9aab;
+  background: var(--pink);
+  color: white;
+}
+
+.map-panel {
+  margin: 24px 0;
+  padding: 12px;
+  border: 3px solid var(--purple);
+  background: #15142a;
+  box-shadow: 0 5px 0 #080711;
+}
+
+.map-topline,
+.map-bottomline {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px;
+  color: var(--yellow);
+  font-family: "Press Start 2P", monospace;
+  font-size: 8px;
+  line-height: 1.9;
+}
+
+.map-topline {
+  padding: 4px 0 12px;
+}
+
+.map-canvas {
+  position: relative;
+  min-height: 360px;
+  overflow: hidden;
+  border: 2px solid #514b83;
+  background:
+    radial-gradient(ellipse at 50% 48%, #29294b 0%, #19192f 70%);
+  isolation: isolate;
+}
+
+.map-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.6;
+  background-image:
+    linear-gradient(#6b63a622 1px, transparent 1px),
+    linear-gradient(90deg, #6b63a622 1px, transparent 1px);
+  background-size: 18px 18px;
+  pointer-events: none;
+}
+
+/* Formas decorativas que sugieren el continente europeo */
+.map-canvas::before {
+  display: none;
+}
+
+.map-svg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.route-base,
+.route-active {
+  fill: none;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.route-base {
+  stroke: #6b63a6;
+  stroke-width: 0.7;
+  stroke-dasharray: 1.5 2;
+  opacity: 0.75;
+}
+
+.route-active {
+  stroke: var(--yellow);
+  stroke-width: 1.1;
+  stroke-dasharray: 2 1.5;
+  filter: drop-shadow(0 0 2px #ff5577);
+  transition: all 0.5s ease;
+}
+
+.map-city {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+  transform: translate(-50%, -50%);
+  color: #8e89b1;
+  text-align: center;
+  transition: opacity 0.3s ease;
+}
+
+.map-city-name {
+  padding: 3px 4px;
+  background: #100f1ddd;
+  font-family: "Press Start 2P", monospace;
+  font-size: clamp(6px, 1.5vw, 9px);
+  white-space: nowrap;
+}
+
+.map-dot {
+  display: grid;
+  place-items: center;
+  width: 17px;
+  height: 17px;
+  border: 2px solid #7770a9;
+  background: #17162a;
+  color: white;
+  font-size: 12px;
+  line-height: 1;
+}
+
+.map-start,
+.map-current {
+  color: var(--yellow);
+}
+
+.map-start .map-dot,
+.map-current .map-dot {
+  border-color: var(--yellow);
+  background: var(--pink);
+  box-shadow: 0 0 0 4px #ff557733, 0 0 14px #ffe66d88;
+}
+
+.map-visited {
+  color: var(--green);
+}
+
+.map-visited .map-dot {
+  border-color: var(--green);
+  background: #1a6047;
+}
+
+.map-locked {
+  opacity: 0.7;
+}
+
+.map-plane {
+  position: absolute;
+  z-index: 4;
+  display: block;
+  font-size: 27px;
+  line-height: 1;
+  transform: translate(-50%, -50%) rotate(-15deg);
+  filter: drop-shadow(2px 3px 0 #080711);
+  transition: left 1s ease, top 1s ease;
+  animation: plane-float 0.55s steps(2, end) infinite;
+}
+
+.map-compass {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  z-index: 3;
+  color: var(--muted);
+  font-family: "Press Start 2P", monospace;
+  font-size: 9px;
+}
+
+.map-bottomline {
+  padding: 12px 0 3px;
+  color: var(--muted);
+}
+
+.progress-panel {
+  margin: 22px 0;
+  padding: 15px;
+  border: 2px solid var(--purple);
+  background: #17162a;
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+  color: var(--yellow);
+  font-family: "Press Start 2P", monospace;
+  font-size: 9px;
+  line-height: 1.8;
+}
+
+.progress-track {
+  height: 12px;
+  border: 2px solid var(--purple);
+  background: #0c0b18;
+}
+
+.progress-fill {
+  height: 100%;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--pink) 0 12px,
+    var(--yellow) 12px 16px
+  );
+  transition: width 0.4s ease;
+}
+
+.stage-heading {
+  margin: 30px 0 18px;
+}
+
+.stage-heading h1 {
+  margin: 8px 0 0;
+}
+
+.country {
+  margin: 0;
+  color: var(--muted);
+  font-size: 22px;
+}
+
+.clue-panel {
+  margin-top: 16px;
+}
+
+.clue-icon {
+  display: grid;
+  place-items: center;
+  width: 65px;
+  height: 65px;
+  margin: 20px auto;
+  border: 3px solid var(--yellow);
+  background: #2c284a;
+  color: var(--yellow);
+  font-size: 40px;
+  box-shadow: 4px 4px 0 #080711;
+}
+
+.clue-story {
+  color: #ded8f5;
+  font-size: 24px;
+  line-height: 1.3;
+}
+
+.question-box {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 2px dashed var(--purple);
+}
+
+.question-box > p {
+  color: var(--yellow);
+  font-size: 25px;
+  line-height: 1.25;
+}
+
+.answer-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.answer-button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 52px;
+  padding: 12px;
+  border: 2px solid #4c4778;
+  border-radius: 0;
+  background: #17162a;
+  color: #f7f0d0;
+  font-size: 23px;
+  text-align: left;
+  transition: border-color 120ms ease, background 120ms ease;
+}
+
+.answer-button:hover:not(:disabled) {
+  border-color: var(--yellow);
+  background: #ffe66d12;
+}
+
+.answer-button:disabled {
+  opacity: 0.8;
+}
+
+.answer-cursor {
+  color: var(--pink);
+}
+
+.selected-answer {
+  border-color: var(--yellow);
+}
+
+.correct-answer {
+  border-color: var(--green);
+  background: #7dffb314;
+  color: var(--green);
+}
+
+.wrong-answer {
+  border-color: var(--pink);
+  color: #ff9aab;
+}
+
+.feedback-box {
+  margin-top: 18px;
+  padding: 13px;
+  border: 2px solid var(--pink);
+  background: #ff557710;
+  color: #ffc1cf;
+  font-size: 22px;
+  line-height: 1.3;
+}
+
+.feedback-good {
+  border-color: var(--green);
+  background: #7dffb310;
+  color: var(--green);
+}
+
+.feedback-bad {
+  border-color: var(--pink);
+}
+
+.hint-button {
+  margin-top: 18px;
+  padding: 9px 0;
+  border: 0;
+  background: transparent;
+  color: var(--yellow);
+  font-size: 20px;
+  text-align: left;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.hint-copy {
+  padding: 12px;
+  border-left: 3px solid var(--yellow);
+  background: #ffe66d0d;
+  color: #e1d9b7;
+  font-size: 21px;
+  line-height: 1.3;
+}
+
+.route-list {
+  margin: 28px 0;
+  padding: 16px;
+  border: 2px solid var(--purple);
+  background: #15142a;
+}
+
+.route-stops {
+  display: grid;
+  gap: 8px;
+}
+
+.route-stop {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 7px;
+  border-bottom: 1px solid #343052;
+  color: #aaa5c9;
+  font-size: 20px;
+}
+
+.route-number {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--purple);
+  color: var(--muted);
+  font-size: 16px;
+}
+
+.route-status {
+  font-family: "Press Start 2P", monospace;
+  font-size: 6px;
+  text-align: right;
+}
+
+.route-current {
+  color: var(--yellow);
+}
+
+.route-current .route-number {
+  border-color: var(--yellow);
+  color: var(--yellow);
+}
+
+.route-current .route-status {
+  color: var(--yellow);
+}
+
+.route-done {
+  color: var(--green);
+}
+
+.route-done .route-number {
+  border-color: var(--green);
+  color: var(--green);
+}
+
+.route-done .route-status {
+  color: var(--green);
+}
+
+.ending {
+  margin-top: 34px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+.trophy {
+  margin: 28px 0;
+  font-size: 64px;
+  filter: drop-shadow(4px 4px 0 #080711);
+}
+
+.ending-copy {
+  margin: 0 auto 26px;
+}
+
+.destination-card {
+  margin-top: 30px;
+  padding: clamp(16px, 4vw, 28px);
+  border: 3px dashed var(--yellow);
+  background: #ffe66d0b;
+}
+
+.big-destination {
+  margin: 22px 0;
+  color: var(--yellow);
+  font-family: "Press Start 2P", monospace;
+  font-size: clamp(18px, 5vw, 34px);
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+  text-shadow: 3px 3px 0 #a42e5a;
+}
+
+.dedication {
+  color: #e5def9;
+  font-size: 24px;
+  line-height: 1.35;
+}
+
+.heart-row {
+  margin: 20px 0 0;
+  color: var(--pink);
+  letter-spacing: 12px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 35px;
+  padding-top: 16px;
+  border-top: 2px solid #343052;
+  color: #8580a5;
+  font-family: "Press Start 2P", monospace;
+  font-size: 7px;
+  line-height: 1.9;
+}
+
+.map-canvas {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 503 / 338;
+  min-height: 0;
+  overflow: hidden;
+
+  background-color: #141329;
+  background-image: url("assets/mapa.jpg");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  border: 3px solid #6b63a6;
+  image-rendering: pixelated;
+}
+
+.city-marker {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  color: #ffe66d;
+  font-family: monospace;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 2px 2px #100f1d;
+  z-index: 2;
+}
+
+.city-marker .dot {
+  display: block;
+  width: 12px;
+  height: 12px;
+  margin: 0 auto 6px;
+  background: #ff5577;
+  border: 2px solid #ffe66d;
+  box-shadow: 0 0 12px #ffe66d88;
+}
+
+.route-line {
+  stroke: #ffe66d;
+  stroke-width: 2;
+  stroke-dasharray: 5 5;
+  fill: none;
+}
+
+@media (max-width: 600px) {
+  .map-canvas {
+    min-height: 340px;
+  }
+
+  .city-marker {
+    font-size: 10px;
+  }
+}
+
+@keyframes plane-float {
+  0%,
+  100% {
+    margin-top: 0;
+  }
+
+  50% {
+    margin-top: -5px;
+  }
+}
+
+@media (max-width: 520px) {
+  .game-shell {
+    width: calc(100% - 22px);
+    padding-top: 12px;
+  }
+
+  .topbar-title {
+    font-size: 10px;
+  }
+
+  .topbar-subtitle {
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+
+  .topbar-status {
+    font-size: 12px;
+  }
+
+  .map-canvas {
+    min-height: 290px;
+  }
+
+  .map-city-name {
+    font-size: 6px;
+  }
+
+  .map-dot {
+    width: 14px;
+    height: 14px;
+  }
+
+  .map-plane {
+    font-size: 22px;
+  }
+
+  .map-topline,
+  .map-bottomline {
+    font-size: 7px;
+  }
+
+  .route-stop {
+    grid-template-columns: 30px minmax(0, 1fr);
+  }
+
+  .route-status {
+    grid-column: 2;
+    text-align: left;
+  }
+
+  .footer {
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
