@@ -47,7 +47,7 @@ const stops: Stop[] = [
       "Dentro de esta ciudad se encuentra un Estado independiente con su propia plaza y basílica monumental.",
     ],
     question: "¿Qué capital tienes que descubrir?",
-    options: ["Nápoles", "Brujas", "Roma", "Milán", "Budapest"],
+    options: ["Nápoles", "Brujas", "Roma", "Milán", "Florencia"],
     answer: "Roma",
     success: "¡Acertaste! Roma ya forma parte de nuestro recorrido.",
     hint: "Llevamos diciendo muchas veces de volver.",
@@ -65,7 +65,7 @@ const stops: Stop[] = [
       "Hay un toro en el suelo que dando vueltas pisándolo, dice que traerá suerte.",
     ],
     question: "¿Qué ciudad italiana es?",
-    options: ["Roma", "Florencia", "Milán"],
+    options: ["Roma", "Florencia", "Milán", "Pisa", "Nápoles"],
     answer: "Milán",
     success: "¡Bien hecho! Has encontrado Milán.",
     hint: "Su catedral se llama Duomo y allí nos comimos un bretzel.",
@@ -101,7 +101,7 @@ const stops: Stop[] = [
       "Tiene el mayor castillo y fortaleza en todo el mundo.",
     ],
     question: "¿Qué región buscas?",
-    options: ["Bruselas", "Occitania", "Ámsterdan", "Londres", "Alsacia"],
+    options: ["HighLands", "Occitania", "Flandes", "Costa Amalfitana", "Alsacia"],
     answer: "Occitania",
     success: "¡Sí! Has descubierto Occitania.",
     hint: "Una región donde las calles de ladrillo rosa y los pueblos de cuento nos transportan a otra época.",
@@ -119,7 +119,7 @@ const stops: Stop[] = [
       "Es la capital de los Países Bajos, un país cuyo nombre suele confundirse con Holanda.",
     ],
     question: "¿Qué ciudad aparece en la postal?",
-    options: ["Bruselas", "Ámsterdam", "Burdeos"],
+    options: ["Bruselas", "Ámsterdam", "Burdeos", "Brujas", "Gante"],
     answer: "Ámsterdam",
     success: "¡Muy bien! Has descubierto Ámsterdam.",
     hint: "Allí vimos la casa de Ana Frank.",
@@ -137,7 +137,7 @@ const stops: Stop[] = [
       "Un pequeño niño de bronce que representa a un personaje orinando es una de sus estatuas más famosas.",
     ],
     question: "¿Qué ciudad europea es?",
-    options: ["Burdeos", "Bruselas", "Ámsterdam"],
+    options: ["Bruselas", "Ámsterdam", "Burdeos", "Brujas", "Gante"],
     answer: "Bruselas",
     success: "¡Has descubierto Bruselas!",
     hint: "Te pusiste nerviosa por llevarnos un par de jarras de cervezas del elefante rosa.",
@@ -155,7 +155,7 @@ const stops: Stop[] = [
       "Los relojes de cuco, los senderos entre abetos y los cuentos populares evocan este lugar.",
     ],
     question: "¿Qué región estamos buscando?",
-    options: ["Selva Negra", "Costa Amalfitana", "Canarias"],
+    options: ["Selva Negra", "Costa Amalfitana", "Canarias", "Occitania", "Cinqueterre"],
     answer: "Selva Negra",
     success: "¡Misterio resuelto! Has descubierto la Selva Negra.",
     hint: "Vimos unas de las cascadas más grandes de Europa y recorrimos sus bosques.",
@@ -173,7 +173,7 @@ const stops: Stop[] = [
       "Sus pueblos medievales, sus colinas cubiertas de viñedos y sus aguas termales naturales crean algunos de los paisajes más emblemáticos de Italia.",
     ],
     question: "¿Qué regió buscas?",
-    options: ["Toscana", "Milán", "Roma"],
+    options: ["Toscana", "Costa Amalfitana", "Canarias", "Occitania", "Cinqueterre"],
     answer: "Toscana",
     success: "¡Correcto! Has encontrado Toscana.",
     hint: "Nos bañamos en unos baños termales romanos al aire libre.",
@@ -186,12 +186,12 @@ const stops: Stop[] = [
     emoji: "🇫🇷",
     clue: "La magia de la Navidad",
     clues: [
-      "Esta región s famosa por sus pueblos de cuento, sus casas de entramado de madera y sus calles decoradas con flores y luces.",
+      "Esta región es famosa por sus pueblos de cuento, sus casas de entramado de madera y sus calles decoradas con flores y luces.",
       "Su capital, es conocida como la Capital de la Navidad y celebra uno de los mercados navideños más antiguos y famosos de Europa.",
       "Durante diciembre, sus plazas se llenan de casetas de madera, adornos, vino caliente y dulces típicos, mientras las fachadas se iluminan con decoraciones navideñas.",
     ],
     question: "¿Qué región francesa buscas?",
-    options: ["Normandía", "Alsacia", "Bretaña"],
+    options: ["Selva Negra", "Alsacia", "HighLands", "Baviera"],
     answer: "Alsacia",
     success: "¡Correcto! Has descubierto Alsacia, donde la Navidad parece sacada de un cuento.",
     hint: "Nos tomamos una cerveza fría sin sacarla del frigorífico.",
@@ -209,10 +209,10 @@ const stops: Stop[] = [
       "Un castillo se alza sobre una roca de origen volcánico y cada año se celebra un festival internacional de artes.",
     ],
     question: "¿Qué ciudad escocesa es?",
-    options: ["Londres", "Edimburgo", "Cracovia"],
+    options: ["Londres", "Edimburgo", "Glasgow", "Inverness"],
     answer: "Edimburgo",
     success: "¡Has descubierto Edimburgo! Nos acercamos al final.",
-    hint: "Su nombre en inglés es Edinburgh.",
+    hint: "Hicimos un tour de leyendas y fuimos a un cementerio.",
     x: 25,
     y: 35,
   },
@@ -227,10 +227,10 @@ const stops: Stop[] = [
       "Pueblos como Positano y Amalfi son famosos por sus casas de colores y sus escalinatas.",
     ],
     question: "¿Qué lugar estamos buscando?",
-    options: ["Selva Negra", "Costa Amalfitana", "Canarias"],
+    options: ["Selva Negra", "Costa Amalfitana", "Canarias", "Baviera", "Occitania"],
     answer: "Costa Amalfitana",
     success: "¡Enhorabuena! Has descubierto la Costa Amalfitana.",
-    hint: "Piensa en Positano, Amalfi y los acantilados del sur de Italia.",
+    hint: "Alquilamos una moto a lo loco jajaja.",
     x: 50,
     y: 75,
   },
@@ -263,7 +263,7 @@ const stops: Stop[] = [
       "Los autobuses de dos pisos y las cabinas telefónicas rojas forman parte de su imagen más reconocible.",
     ],
     question: "¿Qué ciudad buscas?",
-    options: ["París", "Londres", "Roma"],
+    options: ["París", "Londres", "Roma", "Múnich", "Ámsterdam"],
     answer: "Londres",
     success: "¡Sí! Has descubierto Londres.",
     hint: "Dimos de comer a las ardillas, jejeje.",
@@ -281,10 +281,10 @@ const stops: Stop[] = [
       "Desde una de sus torres se escucha una señal de trompeta que, según la tradición, termina de forma abrupta.",
     ],
     question: "¿Qué ciudad polaca es?",
-    options: ["Varsovia", "Cracovia", "Bruselas"],
+    options: ["Varsovia", "Cracovia", "Bruselas", "Múnich", "Tenerife"],
     answer: "Cracovia",
     success: "¡Fantástico! Has descubierto Cracovia.",
-    hint: "Su nombre en inglés es Kraków y su plaza principal es Rynek Główny.",
+    hint: "No hubo nieve para las moto nieves y nos tomamos muchas cervezoskys.",
     x: 55,
     y: 50,
   },
@@ -320,7 +320,7 @@ const stops: Stop[] = [
     options: ["Lanzarote", "Tenerife", "Mallorca"],
     answer: "Mallorca",
     success: "¡Correcto! Has descubierto Mallorca, una joya del Mediterráneo.",
-    hint: "Que ricas las enaimadas.",
+    hint: "Que ricas las ensaimadas.",
     x: 30,
     y: 80,
   },
@@ -332,10 +332,10 @@ const stops: Stop[] = [
     clues: [
       "Esta ciudad es la capital de Baviera y combina edificios históricos con una animada cultura tradicional.",
       "En su plaza principal se encuentra un famoso ayuntamiento con un reloj cuyas figuras mecánicas atraen a multitud de visitantes.",
-      "Cada otoño celebra el Oktoberfest, una de las fiestas populares más famosas del mundo, con música bávara, trajes tradicionales y grandes carpas.",
+      "Fuimos con tu hermano a celebrar el Oktoberfest.",
     ],
     question: "¿Qué ciudad alemana buscas?",
-    options: ["Berlín", "Múnich", "Hamburgo"],
+    options: ["Núremberg", "Múnich", "Fussen", "Triberg", "Frankfurt" ],
     answer: "Múnich",
     success: "¡Correcto! Has descubierto Múnich, el corazón de Baviera.",
     hint: "Nos bebimos unas enormes jarras de cerveza.",
@@ -353,7 +353,7 @@ const stops: Stop[] = [
       "Su Parlamento, iluminado por la noche, se refleja en el agua; la moneda nacional es el florín húngaro.",
     ],
     question: "¿Cuál es el destino final de esta aventura?",
-    options: ["Budapest", "Varsovia", "Bucarest"],
+    options: ["Irlanda", "Budapest", "Berlín", "Venecia", "Viena"],
     answer: "Budapest",
     success: "¡Has encontrado el destino de nuestra próxima aventura!",
     hint: "Las dos partes históricas se llaman Buda y Pest.",
@@ -364,7 +364,7 @@ const stops: Stop[] = [
 ];
 
 const origin = {
-  name: "Jerez de la Frontera",
+  name: "Casa",
   x: 20,
   y: 90,
 };
@@ -440,10 +440,8 @@ function App() {
   return (
     <main className="game-shell">
       <header className="topbar">
-        <div className="pixel-logo">EQ</div>
         <div>
-          <p className="topbar-title">EURO QUEST</p>
-          <p className="topbar-subtitle">UNA AVENTURA EN 8 BITS</p>
+          <p className="topbar-subtitle">UNA AVENTURA EN 8 LETRAS</p>
         </div>
         <span className="topbar-status">● PLAYER 1</span>
       </header>
@@ -455,13 +453,13 @@ function App() {
           <h1>
             Nuestra gran
             <br />
-            <span>aventura europea</span>
+            <span>próxima aventura</span>
           </h1>
 
           <p className="intro-copy">
-            Tengo una misión para ti. Resuelve las pistas,
+            Hola cariñitti, tengo una misión para ti. Resuelve las pistas,
             recorre los lugares que forman parte de nuestra
-            historia y descubre dónde empieza nuestra próxima aventura.
+            historia y descubre cuál será nuestra próxima aventura.
           </p>
 
           <EuropeMap current={-1} completed={[]} />
@@ -504,7 +502,19 @@ function App() {
           <p className="ending-copy">
             Has recorrido nuestros recuerdos, resuelto todos los
             acertijos y desbloqueado el último destino.
-            Ahora sí, ha llegado el momento de descubrir nuestro regalo.
+            Ahora sí, ha llegado el momento de descubrir tu regalo.
+
+            Pero antes, quiero darte las gracias por ser como eres,
+            por cuidarme cada día, por tener tanta paciencia conmigo
+            y por quererme incluso en mis días más difíciles.
+            Gracias por hacer que cada momento a tu lado sea especial
+            y por convertir lo cotidiano en algo bonito.
+
+            Te quiero muchísimo, más de lo que a veces sé expresar,
+            y no se me ocurre nadie mejor con quien seguir sumando
+            aventuras, recuerdos y destinos.
+            Este viaje es solo una pequeña forma de recordarte
+            lo especial que eres para mí.
           </p>
 
           <div className="destination-card">
@@ -689,8 +699,8 @@ function App() {
       )}
 
       <footer className="footer">
-        <span>EURO QUEST ©</span>
-        <span>HECHO CON ♥ PARA TI</span>
+        <span>NUESTRA PROXIMA AVENTURA</span>
+        <span>TE QUIERO</span>
       </footer>
     </main>
   );
@@ -749,7 +759,7 @@ function EuropeMap({
           }}
         >
           <span className="map-dot">★</span>
-          <span className="map-city-name">Jerez</span>
+          <span className="map-city-name">Casa</span>
         </div>
 
         {visibleStops.map((stop) => {
@@ -797,7 +807,7 @@ function EuropeMap({
       </div>
 
       <div className="map-bottomline">
-        <span>✦ ORIGEN: JEREZ</span>
+        <span>✦ ORIGEN: CASA</span>
         <span>
           {current < 0
             ? "RUTA PENDIENTE"
