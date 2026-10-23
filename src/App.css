@@ -318,10 +318,10 @@ h1 span {
 
 .map-city-name {
   padding: 3px 4px;
-  background: #100f1ddd;
   font-family: "Press Start 2P", monospace;
   font-size: clamp(6px, 1.5vw, 9px);
   white-space: nowrap;
+  color: #000;
 }
 
 .map-dot {
